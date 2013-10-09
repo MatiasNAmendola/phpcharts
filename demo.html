@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>coday.in : PHP Charts</title>
+		<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
+		<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js'></script>
+		
+		<link rel="stylesheet" type="text/css" href="css/core.css" />
+		<link rel="stylesheet" type="text/css" href="css/charts.css" />
+		
+		<script>
+			$(document).ready(function(){
+				$('#body').css({'width': '920px', 'height': ($(window).height()-260)+'px'});
+				$.post('lib/phpcharts.load.php', {name: 'spline', width: 920, height: $(window).height()-260}, function(data){
+					$('#body').html(data);
+				});
+			});
+		</script>
+	</head>
+	
+	<body>
+		<div id='wrapper'>
+			<div id='body' style='position: relative;width:1600px;height: 600px;'></div>
+		</div>
+	</body>
+</html>
